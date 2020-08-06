@@ -4,7 +4,7 @@
  * @Author: shetia
  * @Date: 2020-08-05 19:37:43
  * @LastEditors: somebody
- * @LastEditTime: 2020-08-05 21:43:24
+ * @LastEditTime: 2020-08-06 19:37:50
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -15,8 +15,9 @@
   <title>Document</title>
 </head>
 <body>
-  <div id="app"></div>
-  hellow
+  <div id="app" style="color:red;font-size: 12px;">
+    <div>hello{{name}}{{age}}{{arr}}{{school.name}}<span>world</span></div>
+  </div>
   <script src="dist/umd/vue.js"></script>
   <script>
     // options  Api 通过一个选项进行配置
@@ -24,14 +25,20 @@
       el: '#app',
       data () {
         return {
-          arr: [{x: 2}]
+          name: '我是名字',
+          age : 12,
+          arr: [1,2,3],
+          school: {
+            name: '学校',
+            age: 12
+          }
         }
       },
       // template: '',
     })
     // 默认弄个对象会递归去用defineProperty进行拦截, 性能差 所以vue3使用proxy
     // console.log(vm._data.a[1], '123')/
-    console.log(vm.arr)
+    // console.log(vm.arr)
   </script>
 </body>
 </html>

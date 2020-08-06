@@ -1,3 +1,11 @@
+/*
+ * @Descripttion:
+ * @version:
+ * @Author: shetia
+ * @Date: 2020-08-05 20:24:02
+ * @LastEditors: somebody
+ * @LastEditTime: 2020-08-06 19:31:50
+ */
 import { arrayMethods } from "./array";
 import { defineProperty } from '../util'
 class Observe{
@@ -32,11 +40,11 @@ function defineReactive (data, key, value){
   observe(value) // 如果值是对象再进行观测
   Object.defineProperty(data, key, {
     get () {
-      console.log('获取了',key)
+      // console.log('获取了',key)
       return value
     },
     set (newValue) {
-      console.log('设置了',key)
+      // console.log('设置了',key)
       if(value === newValue) return
       observe(newValue) // 如果用户将值改为对象 继续监控
       value = newValue

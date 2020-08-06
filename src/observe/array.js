@@ -22,7 +22,7 @@ let methods = [
 ]
 methods.forEach(method => {
   arrayMethods[method] = function (...args) {
-    console.log('方法被调用了', method)
+    // console.log('方法被调用了', method)
     let result = oldArryPrototMethods[method].apply(this, args)
     let inserted
     let ob = this.__ob__
